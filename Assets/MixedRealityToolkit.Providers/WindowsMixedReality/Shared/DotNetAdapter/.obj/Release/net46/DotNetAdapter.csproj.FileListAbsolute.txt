@@ -1,0 +1,20 @@
+C:\develop\TestUnity\Empty 3D Project\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Editor.asmdef
+C:\develop\TestUnity\Empty 3D Project\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Editor.asmdef.meta
+C:\develop\TestUnity\Empty 3D Project\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Init.cs
+C:\develop\TestUnity\Empty 3D Project\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Init.cs.meta
+C:\develop\TestUnity\Empty 3D Project\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\x64\MonoSupport.dll
+C:\develop\TestUnity\Empty 3D Project\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\x64\MonoSupport.dll.meta
+C:\develop\TestUnity\Empty 3D Project\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT.dll
+C:\develop\TestUnity\Empty 3D Project\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\System.Drawing.Primitives.dll
+C:\develop\TestUnity\Empty 3D Project\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.obj\Release\net46\DotNetAdapter.csprojAssemblyReference.cache
+C:\develop\TestUnity\Empty 3D Project\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.obj\Release\net46\DotNetAdapter.csproj.CopyComplete
+C:\develop\Whack-a-tap\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Editor.asmdef
+C:\develop\Whack-a-tap\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Editor.asmdef.meta
+C:\develop\Whack-a-tap\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Init.cs
+C:\develop\Whack-a-tap\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Init.cs.meta
+C:\develop\Whack-a-tap\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\x64\MonoSupport.dll
+C:\develop\Whack-a-tap\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\x64\MonoSupport.dll.meta
+C:\develop\Whack-a-tap\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT.dll
+C:\develop\Whack-a-tap\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\System.Drawing.Primitives.dll
+C:\develop\Whack-a-tap\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.obj\Release\net46\DotNetAdapter.csprojAssemblyReference.cache
+C:\develop\Whack-a-tap\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.obj\Release\net46\DotNetAdapter.csproj.CopyComplete
