@@ -30,7 +30,6 @@ public class TweenAlpha : MonoBehaviour
         // gameObject.LeanAlpha(transparent, time).setEase(LeanTweenType.easeInCirc);
         // gameObject.LeanColor(Color.clear, 1f);
 
-
     }
 
 }
