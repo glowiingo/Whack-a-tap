@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TweenAlpha : MonoBehaviour
 {
-    float transparent = 0f;
-    float opague = 1f;
+    //float transparent = 0f;
+    //float opague = 1f;
     // Start is called before the first frame update
     // void Start()
     // {
@@ -24,11 +24,11 @@ public class TweenAlpha : MonoBehaviour
         float time = 1f;
         Debug.Log("Test on click.");
         Debug.Log(gameObject.name.ToString());
+        Debug.Log(gameObject.GetComponent<Renderer>().material.ToString());
 
-        gameObject.LeanMoveLocalY(1.0f, time);
+        gameObject.LeanMoveLocalY(10.0f, time);
         gameObject.LeanMoveLocalY(0f, time).setDelay(time);
-        // gameObject.LeanAlpha(transparent, time).setEase(LeanTweenType.easeInCirc);
-        // gameObject.LeanColor(Color.clear, 1f);
+
 
     }
 

@@ -310,7 +310,7 @@ MonoBehaviour:
         Vector2: {x: 0, y: 0}
         Vector3: {x: 0, y: 0, z: 0}
         Vector4: {x: 0, y: 0, z: 0, w: 0}
-        Color: {r: 0.0983446, g: 0.41284543, b: 0.8018868, a: 1}
+        Color: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 0}
         Quaternion: {x: 0, y: 0, z: 0, w: 0}
         AudioClip: {fileID: 0}
         Animation: {fileID: 0}
@@ -413,5 +413,5 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      LerpTime: 0.5
+      LerpTime: 1
   states: {fileID: 11400000, guid: 5eac1712038236e4b8ffdb3893804fe1, type: 2}
