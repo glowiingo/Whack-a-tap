@@ -1,0 +1,8 @@
+Steps to parse Adobe Audition .csv marker file to RhythmData.csv.
+Initial file should contain data only in column A. 
+Remove first line, make sure the new first line is now the data.
+First marker should be at the top and last marker at the bottom (depending on how u export it, it can be the other way around).
+Use the formula below and replace X with the last row number containing the data.
+
+Formula to convert data to milliseconds for RhythmData.csv (rounded to the nearest tenth place):
+=MID(A1:AX,FIND(CHAR(9),A1:AX)+1,1)*60000+MID(A1:AX,FIND(":",A1:AX)+1,2)*1000+ROUND(MID(A1:AX,FIND(".",A1:AX)+1,3),-1)
