@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ButtonSceneManager : MonoBehaviour
 {
-    [SerializeField] private string tutorialScene;
-
-    public void ButtonChangeScene()
+    /// <summary>
+    /// This method will load the scene that is specified by the string paramter.
+    /// </summary>
+    /// <param name="scene">a string, the name of the Scene to load</param>
+    public void ButtonChangeScene(string scene)
     {
-        SceneManager.LoadScene(tutorialScene);
+        SceneManager.LoadScene(scene);
     }
 }
