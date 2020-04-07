@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
@@ -12,7 +11,7 @@ public class Song : MonoBehaviour
     private Dictionary<string, dynamic> musicData;
     public Song(string baseFilePath, string name, string artist)
     {
-        filePath = baseFilePath + "\\Music\\" + name + " - " + artist;
+        filePath = baseFilePath + "\\Assets\\" + "\\Scripts\\" + "\\Music\\" + name + " - " + artist;
         rhythmData = new List<int>();
         musicData = new Dictionary<string, dynamic>();
         bool isViable = true;
