@@ -28,8 +28,7 @@ public class SongCardManager : MonoBehaviour
             string genre = song.Genre;
             string length = song.Length;
 
-            // Get the child object of the song card, which contains the text fields to populate:
-            GameObject songInfoChildObj = songCard.transform.FindChild("SongInfo").gameObject;
+            // Get the child object of the song card, which contains the text fields to populate
 
         }
     }
