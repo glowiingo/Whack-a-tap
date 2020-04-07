@@ -13,6 +13,9 @@ public class ScoreInfoManager : MonoBehaviour
     private GameObject songArtistObj;
     private GameObject currScoreObj;
     private GameObject highScoreObj;
+    private bool isScoreUpdated = false;
+
+    static public uint gameScore;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +28,13 @@ public class ScoreInfoManager : MonoBehaviour
         string artist = songArtistObj.GetComponent<UnityEngine.UI.Text>().text;
         Song song = new Song(Directory.GetCurrentDirectory(), title, artist);
 
-        string currScore = song.Highscore.ToString(new CultureInfo("en-CA"));
-
-        Debug.Log(currScore);
+        string currScore = CurrentScoreManager.gameScore.ToString(new CultureInfo("en-CA"));
+        string highScore = song.Highscore.ToString(new CultureInfo("en-CA"));
 
         // Set the text value in the UI
-        highScoreObj.GetComponent<UnityEngine.UI.Text>().text = currScore;
+        currScoreObj.GetComponent<Text>().text = currScore;
+        highScoreObj.GetComponent<Text>().text = highScore;
     }
+
+
 }
