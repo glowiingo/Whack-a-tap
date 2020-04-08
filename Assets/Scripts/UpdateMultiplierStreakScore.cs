@@ -79,7 +79,7 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
         Debug.Log("ScoreTextUpdated: " + scoreText.GetComponent<TMPro.TextMeshProUGUI>().text.ToString());
 
         // only add to the combo, multiplier, score if the timer is active, otherwise, break combo
-        if (activeTimer)
+        if (gameObject.GetComponent<Renderer>().material.color == Color.green)
         {
             updateComboStreak();
             updateMultiplier();

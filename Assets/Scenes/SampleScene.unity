@@ -1222,6 +1222,7 @@ GameObject:
   - component: {fileID: 932976307}
   - component: {fileID: 932976306}
   - component: {fileID: 932976315}
+  - component: {fileID: 932976314}
   m_Layer: 0
   m_Name: CubeButtonRight
   m_TagString: CubeRight
@@ -1284,8 +1285,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: changeAlpha
+      - m_Target: {fileID: 932976315}
+        m_MethodName: updateScoreText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1295,8 +1296,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 932976315}
-        m_MethodName: updateScoreText
+      - m_Target: {fileID: 932976314}
+        m_MethodName: updateColorOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1573,6 +1574,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932976304}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &932976314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932976304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970bafeadcb09934791ce25da6d2c5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &932976315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,6 +1830,7 @@ GameObject:
   - component: {fileID: 1317324247}
   - component: {fileID: 1317324246}
   - component: {fileID: 1317324249}
+  - component: {fileID: 1317324248}
   m_Layer: 0
   m_Name: CubeButtonLeft
   m_TagString: CubeLeft
@@ -2141,6 +2155,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 1317324248}
+        m_MethodName: updateColorOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Events: []
   enabledOnStart: 1
 --- !u!114 &1317324247
@@ -2157,6 +2182,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   routingTarget: {fileID: 1317324246}
   InteractableOnClick: 1
+--- !u!114 &1317324248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317324238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970bafeadcb09934791ce25da6d2c5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1317324249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2191,6 +2228,7 @@ GameObject:
   - component: {fileID: 1418808157}
   - component: {fileID: 1418808156}
   - component: {fileID: 1418808165}
+  - component: {fileID: 1418808164}
   m_Layer: 0
   m_Name: CubeButtonCenter
   m_TagString: CubeMid
@@ -2253,8 +2291,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: changeAlpha
+      - m_Target: {fileID: 1418808165}
+        m_MethodName: updateScoreText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2264,8 +2302,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1418808165}
-        m_MethodName: updateScoreText
+      - m_Target: {fileID: 1418808164}
+        m_MethodName: updateColorOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2542,6 +2580,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418808154}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1418808164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418808154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970bafeadcb09934791ce25da6d2c5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1418808165
 MonoBehaviour:
   m_ObjectHideFlags: 0

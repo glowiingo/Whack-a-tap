@@ -93,19 +93,6 @@ public class CubeSelect : MonoBehaviour
     
     }
 
-    // Purely for testing
-    // Function to change y position of the specified object.
-    public void changeY(GameObject gObject)
-    {
-        float time = 0.4f;
-        Debug.Log("Test on click.");
-        Debug.Log(gObject.name.ToString());
-        Debug.Log(gObject.GetComponent<Renderer>().material.ToString());
-
-        gObject.LeanMoveLocalY(0.3f, time);
-        gObject.LeanMoveLocalY(0f, time).setDelay(time + 0.1f);
-    }
-
     public void changeColor(GameObject gObject) {
         StartCoroutine(colorChangeCoroutine(gObject));
     }
