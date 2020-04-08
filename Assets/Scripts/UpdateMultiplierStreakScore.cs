@@ -5,33 +5,48 @@ using UnityEngine;
 
 public class UpdateMultiplierStreakScore : MonoBehaviour
 {
-    GameObject scoreText = null;
-    GameObject comboText = null;
-    GameObject multiplierText = null;
+    public GameObject scoreText = null;
+    public GameObject comboText = null;
+    public GameObject multiplierText = null;
     int comboStreak = 0;
     int multiplier = 1;
     int baseScore = 10;
-    Boolean activeTimer = false;
-    public float startTime;
-    public float timer;
-    public float waitTime = 10.0f;
+    // default to false
+    // set to true for testing.
+    public bool activeTimer = true;
+    // float startTime;
+    float timer;
+    float waitTime = 10.0f;
+    float waitTimeSecond = 15.0f;
     public void Start()
     {
         while (scoreText == null && multiplierText == null) {
             scoreText = GameObject.FindGameObjectWithTag("ScoreText");
             comboText = GameObject.FindGameObjectWithTag("ComboText");
             multiplierText = GameObject.FindGameObjectWithTag("MultiplierText");
-            startTime = Time.time;
+            // startTime = Time.time;
         }
     }
 
 
     public void Update()
     {
+        // simulate combo break
+        /**
+         * Uncomment this code for testing
+         * and simulating a combo break
+
         timer += Time.deltaTime;
-        if (timer > waitTime) { 
-            
+        if (timer > waitTime)
+        {
+            activeTimer = false;
         }
+
+        if (timer > waitTimeSecond) {
+            activeTimer = true;
+        }
+
+        */
     }
 
     // Logic for game
@@ -41,6 +56,8 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
     // Only when timer is active can update score be called
     // If timer is not active, combo + multiplier set to 0 and 1 repectively
 
+    // Remove spatial mapping functionality so that cubes don't disappear
+    // or move scene with camera
     /**
      * UpdateScoreText function is only called when the cubes are hit
      * it should break the combo streak if the timer is not active, 
@@ -75,7 +92,7 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
             // set combo to 0
             comboStreak = 0;
             comboText.GetComponent<TMPro.TextMeshProUGUI>().text = comboStreak.ToString();
-            // don't update score
+            // score
         }
 
         scoreText.GetComponent<TMPro.TextMeshProUGUI>().text = currentScore.ToString();
@@ -97,15 +114,6 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
             Debug.LogError("Tried to parse: " + currentMultiplierText);
             Debug.LogError(e.StackTrace);
         }
-        
-        // Then update the multiplier
-        // if the timer isn't active, then reset the multiplier
-        //if (activeTimer) {
-        //    multiplier = CheckAndUpdateComboMultiplier(currentmultiplier);
-        //} else {
-        //    // break multiplier streak
-        //    multiplier = 1;
-        //}
         
         multiplier = CheckAndUpdateComboMultiplier(currentmultiplier);
         Debug.Log("Multiplier: " + multiplier.ToString());
@@ -175,13 +183,6 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
             Debug.LogError(e.StackTrace);
         }
 
-        //if (activeTimer)
-        //{
-        //    currentCombo = currentCombo + 1;
-        //}
-        //else {
-        //    currentCombo = 0;
-        //}
         currentCombo = currentCombo + 1;
         comboStreak = currentCombo;
 
