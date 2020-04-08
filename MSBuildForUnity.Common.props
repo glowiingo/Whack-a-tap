@@ -2,9 +2,15 @@
   
   <!-- These are specific to this Unity project and can't be overridden -->
   <PropertyGroup>
+<<<<<<< HEAD
     <UnityProjectAssetsPath>C:\develop\Whack-a-tap\Assets</UnityProjectAssetsPath>
     
     <_MSBuildForUnityGeneratedOutputDirectory>C:\develop\Whack-a-tap\MSBuild</_MSBuildForUnityGeneratedOutputDirectory>
+=======
+    <UnityProjectAssetsPath>D:\Unity\Wack_A_Tap\Whack-a-tap\Assets</UnityProjectAssetsPath>
+    
+    <_MSBuildForUnityGeneratedOutputDirectory>D:\Unity\Wack_A_Tap\Whack-a-tap\MSBuild</_MSBuildForUnityGeneratedOutputDirectory>
+>>>>>>> SongSelection
     <MSBuildForUnityGeneratedProjectDirectory>$(_MSBuildForUnityGeneratedOutputDirectory)\Projects</MSBuildForUnityGeneratedProjectDirectory>
   </PropertyGroup>
   
@@ -18,7 +24,7 @@
     
     <MSBuildForUnityDefaultOutputPath>$(UnityProjectAssetsPath)\Dependencies</MSBuildForUnityDefaultOutputPath>
     
-    <UnityCurrentPlatform>WSA</UnityCurrentPlatform>
+    <UnityCurrentPlatform>WindowsStandalone64</UnityCurrentPlatform>
     <UnityCurrentTargetFramework>net46</UnityCurrentTargetFramework>
     
     <UnityMajorVersion>2018</UnityMajorVersion>
