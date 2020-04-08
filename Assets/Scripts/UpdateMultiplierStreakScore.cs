@@ -31,8 +31,9 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
 
     public void Update()
     {
-        // simulate combo break
+
         /**
+         * // simulate combo break
          * Uncomment this code for testing
          * and simulating a combo break
 

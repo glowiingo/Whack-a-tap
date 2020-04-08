@@ -10,36 +10,30 @@ public class CubeSelect : MonoBehaviour
     int cubeNumber = 0;
     int oldNumber = 0;
 
-    float startTime;
-    float timer; 
-    float waitTime = 1.0f;
+    //float startTime;
+    //float timer; 
+    //float waitTime = 1.0f;
 
     bool called = false;
     // Start is called before the first frame update
     void Start() {
         setCubes();
         // startTime = Time.time;
+        /**
+         * Testing purposes
         if (!called) {
-            InvokeRepeating("pickRandomCubeAndChangeY", 1.0f, 1.0f);
+            InvokeRepeating("pickRandomCube", 1.0f, 1.0f);
+        }
+        */
+        if (!called)
+        {
+            InvokeRepeating("pickRandomCube", 1.0f, 1.0f);
         }
     }
 
     // Update is called once per frame
     void Update() {
-        //timer += Time.deltaTime;
-        //if (timer > 1.0f && timer < 2.0f) {
-        //    if (!called) {
-        //        pickRandomCubeAndChangeY();
-        //        called = true;
-        //    }
-        //}
 
-        //if (timer > 2.0f && timer < 3.0f) {
-        //    if (!calledSecond) {
-        //        pickRandomCubeAndChangeY();
-        //        calledSecond = true;
-        //    }
-        //}
     }
 
     void setCubes() {
@@ -50,9 +44,16 @@ public class CubeSelect : MonoBehaviour
         Debug.Log("Left: " + cubeLeft.ToString());
         Debug.Log("Mid: " + cubeMid.ToString());
         Debug.Log("Right: " + cubeRight.ToString());
+
+        // set the color to a default color
+        // this cannot be set by the theme because we are unable
+        // to set the 
+        cubeLeft.GetComponent<Renderer>().material.color = Color.yellow;
+        cubeMid.GetComponent<Renderer>().material.color = Color.yellow;
+        cubeRight.GetComponent<Renderer>().material.color = Color.yellow;
     }
 
-    void pickRandomCubeAndChangeY() {
+    void pickRandomCube() {
         //Debug.Log("Old: " + oldNumber.ToString());
         //Debug.Log("New: " + cubeNumber.ToString());
         // pick a random cube number
@@ -67,7 +68,8 @@ public class CubeSelect : MonoBehaviour
         oldNumber = cubeNumber;
         Debug.Log("New: " + cubeNumber.ToString());
         GameObject randomCube = randomCubeSelector(cubeNumber);
-        changeY(randomCube);
+        // changeY(randomCube);
+        changeColor(randomCube);
     }
 
     /***
@@ -91,7 +93,8 @@ public class CubeSelect : MonoBehaviour
     
     }
 
-    // Function to change the alpha
+    // Purely for testing
+    // Function to change y position of the specified object.
     public void changeY(GameObject gObject)
     {
         float time = 0.4f;
@@ -103,4 +106,21 @@ public class CubeSelect : MonoBehaviour
         gObject.LeanMoveLocalY(0f, time).setDelay(time + 0.1f);
     }
 
+    public void changeColor(GameObject gObject) {
+        StartCoroutine(colorChangeCoroutine(gObject));
+    }
+
+    IEnumerator colorChangeCoroutine(GameObject gameObject)
+    {
+        //Print the time of when the function is first called.
+        // Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        gameObject.GetComponent<Renderer>().material.color = Color.green;
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(0.75f);
+
+        gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+        //After we have waited 5 seconds print the time again.
+        // Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+    }
 }
