@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ReplayButton
+  - SongMenuButton
+  - ScoreboardSongTitle
+  - ScoreboardSongArtist
+  - ScoreboardCurrentScore
+  - ScoreboardHighScore
   layers:
   - Default
   - TransparentFX

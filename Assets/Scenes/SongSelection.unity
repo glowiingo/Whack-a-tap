@@ -449,6 +449,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5046c6c0e8bfecd448848d544291dc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &586899105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 586899107}
+  - component: {fileID: 586899106}
+  m_Layer: 0
+  m_Name: SongCardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &586899106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586899105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291a0383550d95c41b9c2cf61ea2730c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songCardList:
+  - {fileID: 2324535002811554728}
+--- !u!4 &586899107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586899105}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2145, y: 0.112311244, z: 0.9821551}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &606104940
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,16 +517,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606104940}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.429, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.513, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4533051166308638284}
   - {fileID: 2326550385001876150}
   - {fileID: 2326366208403066824}
   - {fileID: 1273725459}
-  m_Father: {fileID: 2326457784992517168}
-  m_RootOrder: 1
+  m_Father: {fileID: 1010686696}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &622778173
 GameObject:
@@ -1178,6 +1223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 740066012}
+  - component: {fileID: 740066013}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1201,6 +1247,18 @@ Transform:
   m_Father: {fileID: 453188389}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &740066013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740066011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30cd516097d9e1240ae0f7dc9b85863f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &754539956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,6 +1410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1010686696}
+  - component: {fileID: 1010686697}
   m_Layer: 5
   m_Name: SongInfo
   m_TagString: Untagged
@@ -1377,9 +1436,27 @@ Transform:
   - {fileID: 1449124134}
   - {fileID: 1638232329}
   - {fileID: 642601946}
+  - {fileID: 606104941}
   m_Father: {fileID: 2326457784992517168}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1010686697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010686695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062f98fb8b4d9944f80f7d32b8aacfe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 696428882}
+  genre: {fileID: 1638232330}
+  artist: {fileID: 1449124135}
+  length: {fileID: 642601947}
+  highScore: {fileID: 1273725460}
 --- !u!1 &1163247664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,7 +2004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d9acc7968244a8886f3af591305bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeProfile: {fileID: 11400000, guid: 31a611a779d3499e8e35f1a2018ca841, type: 2}
+  activeProfile: {fileID: 11400000, guid: 01f890b312090d4499962f3c78a2aa69, type: 2}
 --- !u!4 &1534688392
 Transform:
   m_ObjectHideFlags: 0
@@ -2574,7 +2651,7 @@ GameObject:
   - component: {fileID: 2104905495746041712}
   - component: {fileID: 5984745598362834974}
   m_Layer: 5
-  m_Name: SongCard
+  m_Name: Alive-Mind Vortex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2680,7 +2757,7 @@ Transform:
   - {fileID: 2547444882646685422}
   - {fileID: 2326606390125388770}
   m_Father: {fileID: 2326457784992517168}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2326457784992517168
 Transform:
@@ -2693,9 +2770,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.273, z: -0.011192441}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2326397173892817534}
-  - {fileID: 606104941}
   - {fileID: 1010686696}
+  - {fileID: 2326397173892817534}
   m_Father: {fileID: 1963507670}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
