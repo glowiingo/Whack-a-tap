@@ -104,7 +104,7 @@ public class CubeSelect : MonoBehaviour
 
         gameObject.GetComponent<Renderer>().material.color = Color.green;
         //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(2.0f);
 
         gameObject.GetComponent<Renderer>().material.color = Color.yellow;
         //After we have waited 5 seconds print the time again.
