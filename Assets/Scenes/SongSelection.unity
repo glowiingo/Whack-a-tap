@@ -415,6 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 500563371}
+  - component: {fileID: 500563372}
   m_Layer: 0
   m_Name: ButtonSceneManager
   m_TagString: Untagged
@@ -436,6 +437,18 @@ Transform:
   m_Father: {fileID: 740066012}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &500563372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500563370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5046c6c0e8bfecd448848d544291dc08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &586899105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,7 +1447,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010686695}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 062f98fb8b4d9944f80f7d32b8aacfe6, type: 3}
   m_Name: 
@@ -2838,7 +2851,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 500563372}
         m_MethodName: ButtonChangeScene
         m_Mode: 5
         m_Arguments:
