@@ -19,6 +19,7 @@ public class CubeSelect : MonoBehaviour
     int time;
     int count;
     float lengthMilli;
+    private Song song;
 
     //float startTime;
     //float timer; 
@@ -35,34 +36,35 @@ public class CubeSelect : MonoBehaviour
             InvokeRepeating("pickRandomCube", 1.0f, 1.0f);
         }
         */
-        // songCardObj = GameObject.FindGameObjectWithTag("SongAliveByMindVortex");
         filePath = Directory.GetCurrentDirectory() + "\\Assets\\Scripts\\Music\\Alive - Mind Vortex";
         rhythmData = new List<int>();
         MusicFileHandler.tryRhythmData(filePath, rhythmData);
         time = 0;
         count = 0;
-
-        // string[] separator = { "-" };
-        // string[] songInfo = songCardObj.name.Split(separator, StringSplitOptions.RemoveEmptyEntries);
-        Song song = new Song(Directory.GetCurrentDirectory(), "Alive", "Mind Vortex");
+        song = new Song(Directory.GetCurrentDirectory(), "Alive", "Mind Vortex");
         audioSource.PlayDelayed(delay);
         lengthMilli = audioSource.clip.length * 1000;
-        //song.play(audioSource, delay);
 
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Update is called once per frame. Updates the song's current playback time.
+    /// If the song is still playing, it will continue with the game methods. When the song
+    /// is over, prepare to move to the next scene.
+    /// </summary>
     void Update() {
-        if (time < lengthMilli && count < rhythmData.Count)
+        if (time < lengthMilli && count < rhythmData.Count) // song is still playing
         {
             time = Convert.ToInt32(Math.Floor(audioSource.time * 100 + 0.5) * 10);
             if (time >= rhythmData[count])
             {
-                // Debug.Log("boop " + count)
                 pickRandomCube();
 
                 count++;
             }
+        } else // song is over
+        {
+
         }
     }
 
@@ -70,10 +72,6 @@ public class CubeSelect : MonoBehaviour
         cubeLeft = GameObject.FindGameObjectWithTag("CubeLeft");
         cubeMid = GameObject.FindGameObjectWithTag("CubeMid");
         cubeRight = GameObject.FindGameObjectWithTag("CubeRight");
-
-        Debug.Log("Left: " + cubeLeft.ToString());
-        Debug.Log("Mid: " + cubeMid.ToString());
-        Debug.Log("Right: " + cubeRight.ToString());
 
         // set the color to a default color
         // this cannot be set by the theme because we are unable
@@ -84,8 +82,6 @@ public class CubeSelect : MonoBehaviour
     }
 
     public void pickRandomCube() {
-        //Debug.Log("Old: " + oldNumber.ToString());
-        //Debug.Log("New: " + cubeNumber.ToString());
         // pick a random cube number
         cubeNumber = UnityEngine.Random.Range(1, 4);
         // check if old number is the same as cube number
@@ -93,10 +89,8 @@ public class CubeSelect : MonoBehaviour
         while (oldNumber == cubeNumber) {
             cubeNumber = UnityEngine.Random.Range(1, 4);
         }
-        // Debug.Log("New: " + cubeNumber.ToString());
         // if it isn't set new old number to cube number
         oldNumber = cubeNumber;
-        Debug.Log("New: " + cubeNumber.ToString());
         GameObject randomCube = randomCubeSelector(cubeNumber);
         // changeY(randomCube);
         changeColor(randomCube);
