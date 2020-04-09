@@ -1,14 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System;
 
 public class CubeSelect : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public float delay;
     public GameObject cubeLeft = null;
     public GameObject cubeMid = null;
     public GameObject cubeRight = null;
     int cubeNumber = 0;
     int oldNumber = 0;
+    private GameObject songCardObj;
+    private List<int> rhythmData;
+    private string filePath;
+    int time;
+    int count;
+    float lengthMilli;
 
     //float startTime;
     //float timer; 
@@ -25,15 +35,35 @@ public class CubeSelect : MonoBehaviour
             InvokeRepeating("pickRandomCube", 1.0f, 1.0f);
         }
         */
-        if (!called)
-        {
-            InvokeRepeating("pickRandomCube", 1.0f, 1.0f);
-        }
+        // songCardObj = GameObject.FindGameObjectWithTag("SongAliveByMindVortex");
+        filePath = Directory.GetCurrentDirectory() + "\\Assets\\Scripts\\Music\\Alive - Mind Vortex";
+        rhythmData = new List<int>();
+        MusicFileHandler.tryRhythmData(filePath, rhythmData);
+        time = 0;
+        count = 0;
+
+        // string[] separator = { "-" };
+        // string[] songInfo = songCardObj.name.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+        Song song = new Song(Directory.GetCurrentDirectory(), "Alive", "Mind Vortex");
+        audioSource.PlayDelayed(delay);
+        lengthMilli = audioSource.clip.length * 1000;
+        //song.play(audioSource, delay);
+
     }
 
     // Update is called once per frame
     void Update() {
+        if (time < lengthMilli && count < rhythmData.Count)
+        {
+            time = Convert.ToInt32(Math.Floor(audioSource.time * 100 + 0.5) * 10);
+            if (time >= rhythmData[count])
+            {
+                // Debug.Log("boop " + count)
+                pickRandomCube();
 
+                count++;
+            }
+        }
     }
 
     void setCubes() {
@@ -53,15 +83,15 @@ public class CubeSelect : MonoBehaviour
         cubeRight.GetComponent<Renderer>().material.color = Color.yellow;
     }
 
-    void pickRandomCube() {
+    public void pickRandomCube() {
         //Debug.Log("Old: " + oldNumber.ToString());
         //Debug.Log("New: " + cubeNumber.ToString());
         // pick a random cube number
-        cubeNumber = Random.Range(1, 4);
+        cubeNumber = UnityEngine.Random.Range(1, 4);
         // check if old number is the same as cube number
         // if it is, pick again
         while (oldNumber == cubeNumber) {
-            cubeNumber = Random.Range(1, 4);
+            cubeNumber = UnityEngine.Random.Range(1, 4);
         }
         // Debug.Log("New: " + cubeNumber.ToString());
         // if it isn't set new old number to cube number
@@ -104,7 +134,7 @@ public class CubeSelect : MonoBehaviour
 
         gameObject.GetComponent<Renderer>().material.color = Color.green;
         //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
 
         gameObject.GetComponent<Renderer>().material.color = Color.yellow;
         //After we have waited 5 seconds print the time again.
