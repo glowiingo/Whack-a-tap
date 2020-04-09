@@ -10,6 +10,17 @@ TagManager:
   - ScoreboardSongArtist
   - ScoreboardCurrentScore
   - ScoreboardHighScore
+  - ComboLabel
+  - ScoreCanvas
+  - CubeRight
+  - CubeLeft
+  - CubeMid
+  - MusicSource
+  - ScoreLabel
+  - MultiplierLabel
+  - MultiplierText
+  - ComboText
+  - ScoreText
   layers:
   - Default
   - TransparentFX
