@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
+using UnityEngine.UI;
 
 public class CubeSelect : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class CubeSelect : MonoBehaviour
     int count;
     float lengthMilli;
     private Song song;
+    private ButtonSceneManager manager;
 
     bool called = false;
     // Start is called before the first frame update
@@ -33,6 +35,7 @@ public class CubeSelect : MonoBehaviour
         song = new Song(Directory.GetCurrentDirectory(), "Alive", "Mind Vortex");
         audioSource.PlayDelayed(delay);
         lengthMilli = audioSource.clip.length * 1000;
+        manager = new ButtonSceneManager();
 
     }
 
@@ -53,7 +56,8 @@ public class CubeSelect : MonoBehaviour
             }
         } else // song is over
         {
-
+            CurrentScoreManager.setFinalGameScore();
+            manager.ButtonChangeScene("ScoreboardScene");
         }
     }
 

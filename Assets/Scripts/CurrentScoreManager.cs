@@ -13,7 +13,7 @@ using System;
 public class CurrentScoreManager : MonoBehaviour
 {
     static public uint gameScore;
-    private GameObject scoreTextObj;
+    static private GameObject scoreTextObj;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class CurrentScoreManager : MonoBehaviour
     /// <summary>
     /// Set the static variable that holds the game score.
     /// </summary>
-    public void setFinalGameScore()
+    static public void setFinalGameScore()
     {
         string scoreStr = scoreTextObj.GetComponent<TMPro.TextMeshProUGUI>().text;
         try

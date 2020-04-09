@@ -21,6 +21,8 @@ TagManager:
   - MultiplierText
   - ComboText
   - ScoreText
+  - EndGameButton
+  - TutorialStartButton
   layers:
   - Default
   - TransparentFX
