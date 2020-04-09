@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonSceneManager : MonoBehaviour
+public class ButtonSceneManager : ScriptableObject
 {
     /// <summary>
     /// This method will load the scene that is specified by the string paramter.

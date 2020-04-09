@@ -11,54 +11,17 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
     int comboStreak = 0;
     int multiplier = 1;
     int baseScore = 10;
-    // default to false
-    // set to true for testing.
-    public bool activeTimer = true;
-    // float startTime;
-    float timer;
-    float waitTime = 10.0f;
-    float waitTimeSecond = 15.0f;
+    int count = 0;
     public void Start()
     {
-        while (scoreText == null && multiplierText == null) {
+        while ((scoreText == null && multiplierText == null) || count < 10) {
             scoreText = GameObject.FindGameObjectWithTag("ScoreText");
             comboText = GameObject.FindGameObjectWithTag("ComboText");
             multiplierText = GameObject.FindGameObjectWithTag("MultiplierText");
-            // startTime = Time.time;
+            count++;
         }
     }
 
-
-    public void Update()
-    {
-
-        /**
-         * // simulate combo break
-         * Uncomment this code for testing
-         * and simulating a combo break
-
-        timer += Time.deltaTime;
-        if (timer > waitTime)
-        {
-            activeTimer = false;
-        }
-
-        if (timer > waitTimeSecond) {
-            activeTimer = true;
-        }
-
-        */
-    }
-
-    // Logic for game
-    // Only call updateScoreText when allowed to, otherwise, update multiplier + comboStreak to 1, 0
-    // Boolean to set with timer when activated on a random cube
-    // Timer must be called by function that is called half a second earlier than marker (times should be already set)
-    // Only when timer is active can update score be called
-    // If timer is not active, combo + multiplier set to 0 and 1 repectively
-
-    // Remove spatial mapping functionality so that cubes don't disappear
-    // or move scene with camera
     /**
      * UpdateScoreText function is only called when the cubes are hit
      * it should break the combo streak if the timer is not active, 

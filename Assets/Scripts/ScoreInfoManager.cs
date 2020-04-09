@@ -7,13 +7,16 @@ using System;
 using System.IO;
 using System.Globalization;
 
+/// <summary>
+/// Update the information on the Scoreboard with the player's most
+/// recent score and their highest score.
+/// </summary>
 public class ScoreInfoManager : MonoBehaviour
 {
     private GameObject songTitleObj;
     private GameObject songArtistObj;
     private GameObject currScoreObj;
     private GameObject highScoreObj;
-    private bool isScoreUpdated = false;
 
     static public uint gameScore;
 

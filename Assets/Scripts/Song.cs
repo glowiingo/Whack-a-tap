@@ -9,6 +9,15 @@ public class Song : MonoBehaviour
     private string filePath;
     private List<int> rhythmData;
     private Dictionary<string, dynamic> musicData;
+
+    /// <summary>
+    /// Conscruct a Song object that holds data regarding the timing of the rhythm,
+    /// and properties like name and artist. Loads in the information from a JSON file
+    /// for the song that is specified by the name and artist arguments.
+    /// </summary>
+    /// <param name="baseFilePath"></param>
+    /// <param name="name"></param>
+    /// <param name="artist"></param>
     public Song(string baseFilePath, string name, string artist)
     {
         filePath = baseFilePath + "\\Assets\\Scripts\\Music\\" + name + " - " + artist;
@@ -74,32 +83,6 @@ public class Song : MonoBehaviour
             return false;
         }
     }
-
-    //public void play()
-    //{
-    //    Uri uri = new Uri(filePath + "\\Audio.mp3");
-    //    mediaPlayer.Open(uri);
-    //    mediaPlayer.Play();
-    //    int time = 0;
-    //    int count = 0;
-    //    while (time < LengthMilli && count < rhythmData.Count)
-    //    {
-    //        time = Convert.ToInt32(Math.Floor(mediaPlayer.Position.TotalSeconds * 100 + 0.5) * 10);
-
-    //        if (rhythmData[count] == time)
-    //        {
-
-    //            Console.WriteLine("boop " + count);
-    //            count++;
-    //        }
-    //    }
-    //    Console.WriteLine("end of beats");
-    //}
-
-    //public void stop()
-    //{
-    //    mediaPlayer.Stop();
-    //}
 
     // returns formatted string of song data
     public string toString()
