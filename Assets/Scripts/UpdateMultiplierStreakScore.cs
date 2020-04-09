@@ -5,72 +5,126 @@ using UnityEngine;
 
 public class UpdateMultiplierStreakScore : MonoBehaviour
 {
-    GameObject scoreText = null;
-    GameObject comboText = null;
-    GameObject multiplierText = null;
+    public GameObject scoreText = null;
+    public GameObject comboText = null;
+    public GameObject multiplierText = null;
     int comboStreak = 0;
     int multiplier = 1;
+    int baseScore = 10;
+    // default to false
+    // set to true for testing.
+    public bool activeTimer = true;
+    // float startTime;
+    float timer;
+    float waitTime = 10.0f;
+    float waitTimeSecond = 15.0f;
     public void Start()
     {
-        while (scoreText == null && multiplierText == null)
-        {
+        while (scoreText == null && multiplierText == null) {
             scoreText = GameObject.FindGameObjectWithTag("ScoreText");
             comboText = GameObject.FindGameObjectWithTag("ComboText");
             multiplierText = GameObject.FindGameObjectWithTag("MultiplierText");
+            // startTime = Time.time;
         }
     }
+
+
+    public void Update()
+    {
+
+        /**
+         * // simulate combo break
+         * Uncomment this code for testing
+         * and simulating a combo break
+
+        timer += Time.deltaTime;
+        if (timer > waitTime)
+        {
+            activeTimer = false;
+        }
+
+        if (timer > waitTimeSecond) {
+            activeTimer = true;
+        }
+
+        */
+    }
+
+    // Logic for game
+    // Only call updateScoreText when allowed to, otherwise, update multiplier + comboStreak to 1, 0
+    // Boolean to set with timer when activated on a random cube
+    // Timer must be called by function that is called half a second earlier than marker (times should be already set)
+    // Only when timer is active can update score be called
+    // If timer is not active, combo + multiplier set to 0 and 1 repectively
+
+    // Remove spatial mapping functionality so that cubes don't disappear
+    // or move scene with camera
+    /**
+     * UpdateScoreText function is only called when the cubes are hit
+     * it should break the combo streak if the timer is not active, 
+     * and if it is, then update combo + multiplier properly
+     */
     public void updateScoreText() {
         int currentScore = 0;
         string currentScoreText = scoreText.GetComponent<TMPro.TextMeshProUGUI>().text.ToString();
         
-        try
-        {
+        try {
             currentScore = int.Parse(currentScoreText);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Debug.LogError("Tried to parse: " + currentScoreText);
             Debug.LogError(e.StackTrace);
         }
 
         Debug.Log("ScoreTextObject: " + scoreText.ToString());
         Debug.Log("ScoreTextUpdated: " + scoreText.GetComponent<TMPro.TextMeshProUGUI>().text.ToString());
-        updateComboStreak();
-        updateMultiplier();
-        currentScore = currentScore + (10 * multiplier);
+
+        // only add to the combo, multiplier, score if the timer is active, otherwise, break combo
+        if (gameObject.GetComponent<Renderer>().material.color == Color.green)
+        {
+            updateComboStreak();
+            updateMultiplier();
+            currentScore = currentScore + (baseScore * multiplier);
+        }
+        else {
+            // break combo
+            // set multiplier to 1
+            multiplier = 1;
+            multiplierText.GetComponent<TMPro.TextMeshProUGUI>().text = multiplier.ToString();
+            // set combo to 0
+            comboStreak = 0;
+            comboText.GetComponent<TMPro.TextMeshProUGUI>().text = comboStreak.ToString();
+            // score
+        }
 
         scoreText.GetComponent<TMPro.TextMeshProUGUI>().text = currentScore.ToString();
- 
     }
 
     public void updateMultiplier() {
-        int currentmultiplier = 0;
+        int currentmultiplier = 1;
         string currentMultiplierText = multiplierText.GetComponent<TMPro.TextMeshProUGUI>().text.ToString();
 
-        try
-        {
-            if (currentMultiplierText == "")
-            {
-                currentmultiplier = 0;
-            }
-            else {
+        try {
+            if (currentMultiplierText == "") {
+                // set multiplier to 1 if multiplier is blank
+                currentmultiplier = 1;
+            } else {
+                // otherwise, get current multiplier
                 currentmultiplier = int.Parse(currentMultiplierText);
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Debug.LogError("Tried to parse: " + currentMultiplierText);
             Debug.LogError(e.StackTrace);
         }
+        
         multiplier = CheckAndUpdateComboMultiplier(currentmultiplier);
         Debug.Log("Multiplier: " + multiplier.ToString());
-
         Debug.Log("MultiplierTextObject: " + multiplierText.ToString());
         Debug.Log("MultiplierTextUpdated: " + multiplierText.GetComponent<TMPro.TextMeshProUGUI>().text.ToString());
 
         multiplierText.GetComponent<TMPro.TextMeshProUGUI>().text = multiplier.ToString();
     }
 
+    
     public int CheckAndUpdateComboMultiplier(int currentMultiplier) {
         if (currentMultiplier == 4)
         {
