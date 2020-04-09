@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 291988960}
   m_Layer: 5
   m_Name: StartButton
-  m_TagString: Untagged
+  m_TagString: TutorialStartButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   debounceThreshold: 0.01
   localForward: {x: 0, y: 0, z: -1}
   localUp: {x: 0, y: 1, z: 0}
-  localCenter: {x: 0, y: 0, z: -0.01}
+  localCenter: {x: 0, y: 0, z: -0.06}
   bounds: {x: 0.12, y: 0.12}
   touchableCollider: {fileID: 291988966}
 --- !u!114 &291988965
@@ -407,7 +407,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1699608483}
-        m_MethodName: ButtonChangeScene
+        m_MethodName: triggerSceneChange
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699608481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5046c6c0e8bfecd448848d544291dc08, type: 3}
+  m_Script: {fileID: 11500000, guid: 7efe782db3610d943be93fdcd7e03c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1704311804

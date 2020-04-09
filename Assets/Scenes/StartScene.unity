@@ -152,7 +152,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 19089640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5046c6c0e8bfecd448848d544291dc08, type: 3}
+  m_Script: {fileID: 11500000, guid: 7efe782db3610d943be93fdcd7e03c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &136506284
@@ -713,7 +713,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 19089642}
-        m_MethodName: ButtonChangeScene
+        m_MethodName: triggerSceneChange
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2593,7 +2593,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 19089642}
-        m_MethodName: ButtonChangeScene
+        m_MethodName: triggerSceneChange
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
