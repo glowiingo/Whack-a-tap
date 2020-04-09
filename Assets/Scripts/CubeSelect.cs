@@ -13,7 +13,6 @@ public class CubeSelect : MonoBehaviour
     public GameObject cubeRight = null;
     int cubeNumber = 0;
     int oldNumber = 0;
-    private GameObject songCardObj;
     private List<int> rhythmData;
     private string filePath;
     int time;
@@ -21,21 +20,11 @@ public class CubeSelect : MonoBehaviour
     float lengthMilli;
     private Song song;
 
-    //float startTime;
-    //float timer; 
-    //float waitTime = 1.0f;
-
     bool called = false;
     // Start is called before the first frame update
     void Start() {
         setCubes();
         // startTime = Time.time;
-        /**
-         * Testing purposes
-        if (!called) {
-            InvokeRepeating("pickRandomCube", 1.0f, 1.0f);
-        }
-        */
         filePath = Directory.GetCurrentDirectory() + "\\Assets\\Scripts\\Music\\Alive - Mind Vortex";
         rhythmData = new List<int>();
         MusicFileHandler.tryRhythmData(filePath, rhythmData);
