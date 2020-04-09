@@ -4,6 +4,8 @@ using UnityEngine;
 using System.IO;
 using System;
 using UnityEngine.UI;
+using TMPro;
+using Newtonsoft.Json;
 
 public class CubeSelect : MonoBehaviour
 {
@@ -36,7 +38,6 @@ public class CubeSelect : MonoBehaviour
         audioSource.PlayDelayed(delay);
         lengthMilli = audioSource.clip.length * 1000;
         manager = new ButtonSceneManager();
-
     }
 
     /// <summary>
@@ -45,7 +46,7 @@ public class CubeSelect : MonoBehaviour
     /// is over, prepare to move to the next scene.
     /// </summary>
     void Update() {
-        if (time < lengthMilli && count < rhythmData.Count) // song is still playing
+        if (count < rhythmData.Count && time < lengthMilli) // song is still playing
         {
             time = Convert.ToInt32(Math.Floor(audioSource.time * 100 + 0.5) * 10);
             if (time >= rhythmData[count])
@@ -54,8 +55,29 @@ public class CubeSelect : MonoBehaviour
 
                 count++;
             }
-        } else // song is over
+        } else if(!audioSource.isPlaying) // song is over
         {
+            // get user's score
+            GameObject gameObject = GameObject.FindGameObjectWithTag("ScoreText");
+            string scoreStr = gameObject.GetComponent<TextMeshProUGUI>().text;
+            uint userScore;
+            if (!UInt32.TryParse(scoreStr, out userScore))
+            {
+                Debug.LogError("Could not parse GameObject \"ScoreText\"" +
+                    " text component to an unsigned integer");
+            }
+
+            // get highscore from json file
+            Dictionary<string, dynamic> dict = new Dictionary<string, dynamic>();
+            MusicFileHandler.tryMusicData(filePath, dict);
+            uint highscore = dict["Highscore"];
+
+            // overwrite previous highscore if user beat it
+            if (userScore > highscore)
+            {
+                dict["Highscore"] = userScore;
+                File.WriteAllText(filePath + "\\MusicData.json", JsonConvert.SerializeObject(dict));
+            }
             CurrentScoreManager.setFinalGameScore();
             manager.ButtonChangeScene("ScoreboardScene");
         }
