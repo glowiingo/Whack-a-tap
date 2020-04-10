@@ -5,11 +5,18 @@ using Newtonsoft.Json;
 using System.IO;
 using System;
 
-// checks validity of rhythm and/or music data, filepath should lead to the
-// music folder containing them.
+/// <summary>
+/// checks validity of rhythm and/or music data, filepath should lead to the
+///  music folder containing them.
+/// </summary>
 public static class MusicFileHandler
 {
-    // checks if all the data in the rhythm data is valid
+    /// <summary>
+    /// checks if all the data in the rhythm data is valid
+    /// </summary>
+    /// <param name="filePath"></param>
+    /// <param name="list"></param>
+    /// <returns></returns>
     public static bool tryRhythmData(string filePath, List<int> list)
     {
         List<string> errList = new List<string>();
@@ -49,7 +56,12 @@ public static class MusicFileHandler
         }
     }
 
-    // checks if all the data in the music data is valid
+    /// <summary>
+    /// checks if all the data in the music data is valid
+    /// </summary>
+    /// <param name="filePath"></param>
+    /// <param name="newDict"></param>
+    /// <returns></returns>
     public static bool tryMusicData(string filePath, Dictionary<string, dynamic> newDict)
     {
         using (StreamReader data = new StreamReader(filePath + "\\MusicData.json"))

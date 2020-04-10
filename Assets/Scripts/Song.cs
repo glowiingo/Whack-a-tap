@@ -61,8 +61,13 @@ public class Song : MonoBehaviour
     public uint Highscore { get; private set; }
     // used for audio timing purposes, not part of MusicData
     private int LengthMilli { get; }
-    // returns true and overwrites previous highscore in json file if 
-    // the new score is higher, otherwise returns false
+
+    /// <summary>
+    /// returns true and overwrites previous highscore in json file if 
+    /// the new score is higher, otherwise returns false
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
     public bool trySetHighscore(uint num)
     {
         if (num > Highscore)
@@ -84,7 +89,10 @@ public class Song : MonoBehaviour
         }
     }
 
-    // returns formatted string of song data
+    /// <summary>
+    /// returns formatted string of song data
+    /// </summary>
+    /// <returns></returns>
     public string toString()
     {
         return "Name: " + Name
