@@ -25,11 +25,10 @@ public class ColorChangeOnClick : MonoBehaviour
         // Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
         gameObject.GetComponent<Renderer>().material.color = Color.red;
-        //yield on a new YieldInstruction that waits for 5 seconds.
+        //yield on a new YieldInstruction that waits for 1 seconds.
         yield return new WaitForSeconds(1.0f);
 
         gameObject.GetComponent<Renderer>().material.color = Color.yellow;
-        //After we have waited 5 seconds print the time again.
         // Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 

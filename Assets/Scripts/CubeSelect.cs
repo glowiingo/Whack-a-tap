@@ -7,6 +7,9 @@ using UnityEngine.UI;
 using TMPro;
 using Newtonsoft.Json;
 
+/// <summary>
+/// 
+/// </summary>
 public class CubeSelect : MonoBehaviour
 {
     public AudioSource audioSource;
@@ -23,8 +26,6 @@ public class CubeSelect : MonoBehaviour
     float lengthMilli;
     private Song song;
     private ButtonSceneManager manager;
-
-    bool called = false;
     // Start is called before the first frame update
     void Start() {
         setCubes();
@@ -83,6 +84,9 @@ public class CubeSelect : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     void setCubes() {
         cubeLeft = GameObject.FindGameObjectWithTag("CubeLeft");
         cubeMid = GameObject.FindGameObjectWithTag("CubeMid");
@@ -96,6 +100,9 @@ public class CubeSelect : MonoBehaviour
         cubeRight.GetComponent<Renderer>().material.color = Color.yellow;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void pickRandomCube() {
         // pick a random cube number
         cubeNumber = UnityEngine.Random.Range(1, 4);
@@ -111,10 +118,11 @@ public class CubeSelect : MonoBehaviour
         changeColor(randomCube);
     }
 
-    /***
-     * Given a random number between 1 and 3 return the correlating cube.
-     * param: cubeNumber, a random number between 1 and 3.
-     */
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="cubeNumber"></param>
+    /// <returns></returns>
     GameObject randomCubeSelector(int cubeNumber) {
         GameObject selectedCube = null;
         switch (cubeNumber) {
@@ -132,10 +140,19 @@ public class CubeSelect : MonoBehaviour
     
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="gObject"></param>
     public void changeColor(GameObject gObject) {
         StartCoroutine(colorChangeCoroutine(gObject));
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="gameObject"></param>
+    /// <returns></returns>
     IEnumerator colorChangeCoroutine(GameObject gameObject)
     {
         //Print the time of when the function is first called.

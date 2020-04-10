@@ -50,7 +50,7 @@ public class Song : MonoBehaviour
         }
         else
         {
-            Environment.Exit(-1);
+
         }
     }
     public string Name { get; }

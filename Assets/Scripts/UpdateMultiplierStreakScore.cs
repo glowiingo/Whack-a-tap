@@ -14,6 +14,7 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
     int count = 0;
     public void Start()
     {
+        //
         while ((scoreText == null && multiplierText == null) || count < 10) {
             scoreText = GameObject.FindGameObjectWithTag("ScoreText");
             comboText = GameObject.FindGameObjectWithTag("ComboText");
@@ -22,11 +23,11 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
         }
     }
 
-    /**
-     * UpdateScoreText function is only called when the cubes are hit
-     * it should break the combo streak if the timer is not active, 
-     * and if it is, then update combo + multiplier properly
-     */
+    /// <summary>
+    /// UpdateScoreText function is only called when the cubes are hit 
+    /// it should break the combo streak if the timer is not active,
+    /// and if it is, then update combo + multiplier properly
+    /// </summary>
     public void updateScoreText() {
         int currentScore = 0;
         string currentScoreText = scoreText.GetComponent<TMPro.TextMeshProUGUI>().text.ToString();
@@ -62,6 +63,9 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
         scoreText.GetComponent<TMPro.TextMeshProUGUI>().text = currentScore.ToString();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void updateMultiplier() {
         int currentmultiplier = 1;
         string currentMultiplierText = multiplierText.GetComponent<TMPro.TextMeshProUGUI>().text.ToString();
@@ -87,7 +91,11 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
         multiplierText.GetComponent<TMPro.TextMeshProUGUI>().text = multiplier.ToString();
     }
 
-    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="currentMultiplier"></param>
+    /// <returns></returns>
     public int CheckAndUpdateComboMultiplier(int currentMultiplier) {
         if (currentMultiplier == 4)
         {
@@ -125,6 +133,9 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void updateComboStreak()
     {
         int currentCombo = 0;
