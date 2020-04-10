@@ -15,6 +15,10 @@ public class CurrentScoreManager : MonoBehaviour
     static public uint gameScore;
     static private GameObject scoreTextObj;
 
+    /// <summary>
+    /// Start method is called before the first frame update. Instantiate
+    /// static instance variable by getting the game object by its tag.
+    /// </summary>
     void Start()
     {
         scoreTextObj = GameObject.FindGameObjectWithTag("ScoreText");
