@@ -10,10 +10,23 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
     public GameObject multiplierText = null;
     int comboStreak = 0;
     int multiplier = 1;
-    int baseScore = 10;
+    const int BASE_SCORE = 10;
     int count = 0;
+
+    const int MULTIPLIER_LEVEL_ZERO = 0;
+    const int MULTIPLIER_LEVEL_ONE = 1;
+    const int MULTIPLIER_LEVEL_TWO = 2;
+    const int MULTIPLIER_LEVEL_THREE = 4;
+    const int MULTIPLIER_LEVEL_FOUR = 8;
+
+    const int COMBO_REQ_LVL_ONE = 1;
+    const int COMBO_REQ_LVL_TWO = 4;
+    const int COMBO_REQ_LVL_THREE = 8;
+    const int COMBO_REQ_LVL_FOUR = 16;
+
     public void Start()
     {
+        // waits for the scoretext and multipliertext to load or counts 10 iterations before stopping
         while ((scoreText == null && multiplierText == null) || count < 10) {
             scoreText = GameObject.FindGameObjectWithTag("ScoreText");
             comboText = GameObject.FindGameObjectWithTag("ComboText");
@@ -22,11 +35,11 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
         }
     }
 
-    /**
-     * UpdateScoreText function is only called when the cubes are hit
-     * it should break the combo streak if the timer is not active, 
-     * and if it is, then update combo + multiplier properly
-     */
+    /// <summary>
+    /// UpdateScoreText function is only called when the cubes are hit 
+    /// it should break the combo streak if the timer is not active,
+    /// and if it is, then update combo + multiplier properly
+    /// </summary>
     public void updateScoreText() {
         int currentScore = 0;
         string currentScoreText = scoreText.GetComponent<TMPro.TextMeshProUGUI>().text.ToString();
@@ -46,7 +59,7 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
         {
             updateComboStreak();
             updateMultiplier();
-            currentScore = currentScore + (baseScore * multiplier);
+            currentScore = currentScore + (BASE_SCORE * multiplier);
         }
         else {
             // break combo
@@ -62,6 +75,10 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
         scoreText.GetComponent<TMPro.TextMeshProUGUI>().text = currentScore.ToString();
     }
 
+    /// <summary>
+    /// Updates the current multiplier by checking what the current multiplier has been currently set to
+    /// and updates based on the specified conditions in CheckAndUpdateComboMultiplier
+    /// </summary>
     public void updateMultiplier() {
         int currentmultiplier = 1;
         string currentMultiplierText = multiplierText.GetComponent<TMPro.TextMeshProUGUI>().text.ToString();
@@ -87,35 +104,40 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
         multiplierText.GetComponent<TMPro.TextMeshProUGUI>().text = multiplier.ToString();
     }
 
-    
+    /// <summary>
+    /// Get the current multiplier and check the combo streak for specific conditions.
+    /// Then set the current multiplier based on those conditions.
+    /// </summary>
+    /// <param name="currentMultiplier"></param>
+    /// <returns></returns>
     public int CheckAndUpdateComboMultiplier(int currentMultiplier) {
-        if (currentMultiplier == 4)
+        if (currentMultiplier == MULTIPLIER_LEVEL_THREE)
         {
-            if (comboStreak >= 16)
+            if (comboStreak >= COMBO_REQ_LVL_FOUR)
             {
-                currentMultiplier = 8;
+                currentMultiplier = MULTIPLIER_LEVEL_FOUR;
             }
             return currentMultiplier;
         }
-        else if (currentMultiplier == 2)
+        else if (currentMultiplier == MULTIPLIER_LEVEL_TWO)
         {
-            if (comboStreak >= 8)
+            if (comboStreak >= COMBO_REQ_LVL_THREE)
             {
-                currentMultiplier = 4;
+                currentMultiplier = MULTIPLIER_LEVEL_THREE;
             }
             return currentMultiplier;
         }
-        else if (currentMultiplier == 1)
+        else if (currentMultiplier == MULTIPLIER_LEVEL_ONE)
         {
-            if (comboStreak >= 4)
+            if (comboStreak >= COMBO_REQ_LVL_TWO)
             {
-                currentMultiplier = 2;
+                currentMultiplier = MULTIPLIER_LEVEL_TWO;
             }
             return currentMultiplier;
         }
-        else if (currentMultiplier == 0) {
-            if (comboStreak == 1) {
-                currentMultiplier = 1;
+        else if (currentMultiplier == MULTIPLIER_LEVEL_ZERO) {
+            if (comboStreak == COMBO_REQ_LVL_ONE) {
+                currentMultiplier = MULTIPLIER_LEVEL_ONE;
             }
             return currentMultiplier;
         }
@@ -125,6 +147,9 @@ public class UpdateMultiplierStreakScore : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the combo streak by adding one every time.
+    /// </summary>
     public void updateComboStreak()
     {
         int currentCombo = 0;
